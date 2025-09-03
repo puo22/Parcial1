@@ -50,37 +50,33 @@ salida debe ser por consola.
 
 Ejemplo de entrada (pruebas.txt):
 
----bash
-sqrt(9)
-sqrt(2.25)
-25
-sqrt(16)
+---
+- sqrt(9)
+- sqrt(2.25)
+- sqrt(16)
 ---
 
 Salida en consola:
+- Resultado: 3.000000
+- Resultado: 1.500000
+- Resultado: 25.000000
 
----
-Resultado: 3.000000
-Resultado: 1.500000
-Resultado: 25.000000
-Resultado: 4.000000
----
 
-# Archivos del proyecto
+### Archivos del proyecto
 
-Calc.l → archivo de Flex (análisis léxico).
-Calc.y → archivo de Bison (análisis sintáctico).
-lex.yy.c → generado automáticamente por Flex.
-Calc.tab.c y Calc.tab.h → generados automáticamente por Bison.
-Calc → ejecutable final.
-pruebas.txt → archivo de entrada con expresiones a evaluar.
+- Calc.l → archivo de Flex (análisis léxico).
+- Calc.y → archivo de Bison (análisis sintáctico).
+- lex.yy.c → generado automáticamente por Flex.
+- Calc.tab.c y Calc.tab.h → generados automáticamente por Bison.
+- Calc → ejecutable final.
+- pruebas.txt → archivo de entrada con expresiones a evaluar.
 
-## Compilación
+### Compilación
 Generar los archivos con Bison y Flex:
 
 ---
-bison -d Calc.y
-flex Calc.l
+- bison -d Calc.y
+- flex Calc.l
 ---
 
 Compilar con gcc:
