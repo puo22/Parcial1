@@ -28,9 +28,6 @@ ACEPTE”
 
 ### Desarrollo
 
-```bash
-javac *.java
-```
 La expreción regular indica que se acepta tanto letras como digitos 
 -Las letras pueden ser tanto mayúsculas como minúsculas y cubren todo el alfabeto
 -El primer carácter debe ser una letra (mayúscula o minúscula).
@@ -51,7 +48,43 @@ salida debe ser por consola.
 - Operaciones soportadas: sqrt(x) y valores numéricos reales.
 - Salida: resultados mostrados en consola.
 
+Ejemplo de entrada (pruebas.txt):
 
+---bash
+sqrt(9)
+sqrt(2.25)
+25
+sqrt(16)
+---
+
+Salida en consola:
+
+---
+Resultado: 3.000000
+Resultado: 1.500000
+Resultado: 25.000000
+Resultado: 4.000000
+---
+
+# Archivos del proyecto
+
+Calc.l → archivo de Flex (análisis léxico).
+Calc.y → archivo de Bison (análisis sintáctico).
+lex.yy.c → generado automáticamente por Flex.
+Calc.tab.c y Calc.tab.h → generados automáticamente por Bison.
+Calc → ejecutable final.
+pruebas.txt → archivo de entrada con expresiones a evaluar.
+
+## Compilación
+Generar los archivos con Bison y Flex:
+
+---
+bison -d Calc.y
+flex Calc.l
+---
+
+Compilar con gcc:
+gcc Calc.tab.c lex.yy.c -o Calc -lm
 
 ---
 
@@ -64,6 +97,13 @@ comparación.
 ```
 ### Desarrollo
 
+C (Compilado)	
+Velocidad	Muy rápido (milisegundos)
+- Razón	El código se convierte a código de máquina optimizado antes de ejecutarse.
+
+Python (interpretado)
+Más lento (cientos de milisegundos)
+- El intérprete debe analizar y ejecutar cada línea de código en tiempo real.
 
 ```
 
